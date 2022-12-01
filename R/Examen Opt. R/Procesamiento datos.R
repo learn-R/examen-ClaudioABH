@@ -137,6 +137,10 @@ sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$nacionalidad,
 ##Gráfico delincuencia-nacionalidad
 plot_grpfrq(data_a_usar$nacionalidad, data_a_usar$percepcion_delincuencia,
             type = "bar", title = "Gráfico de barras")
+plot_xtab(data_a_usar$percepcion_delincuencia, data_a_usar$nacionalidad, margin = "row", 
+          bar.pos = "stack",
+          title = "Gráfico de barras horizontales",
+          show.summary = TRUE, coord.flip = TRUE)
 
 # ANÁLISIS PERCEPCIÓN DELINCUENCIA-REGIÓN --------------------------------------------
 ENUSC %>% 

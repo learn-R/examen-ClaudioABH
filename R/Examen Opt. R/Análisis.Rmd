@@ -10,11 +10,23 @@ output:
     collapsed: false
     smooth_scroll: true
 ---
+### **Percepción de delincuencia en habitantes de zonas macrozona centro sur y macrozona sur**
+___
+
+#### **Abstrac**
+___
+
+#### **Introducción**
+___
+
+
+
+___
 ##### **DIRECTORIO DE TRABAJO**
 ```{r}
 setwd("C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/R/Examen Opt. R")
 ```
-
+___
 ##### **PAQUETES**
 ```{r}
 pacman::p_load(sjmisc,
@@ -28,22 +40,22 @@ pacman::p_load(sjmisc,
                survey,
                plotrix)
 ```
-
+___
 ##### **BASE DE DATOS**
 ```{r}
 data_original_ENUSC <- read_sav("base-usuario-18-enusc-2021-sav.sav")
 ```
-
+___
 ##### **SELECCIÓN DE VARIABLES**
 ```{r}
 data_a_usar <- select(data_original_ENUSC, rph_nacionalidad, P1_1_1, rph_edad, rph_sexo, enc_region, rph_ID)
 ```
-
+___
 ##### **RENOMBRE DE VARIABLES**
 ```{r}
 names(data_a_usar) = c("nacionalidad", "percepcion_delincuencia", "edad", "sexo", "region", "ID")
 ```
-
+___
 ##### **EXPLORACIÓN DE DATOS**
 ```{r}
 descr(data_a_usar$nacionalidad)
@@ -53,7 +65,7 @@ descr(data_a_usar$sexo)
 descr(data_a_usar$region)
 descr(data_a_usar$region)
 ```
-
+___
 ##### **FILTRO EDAD**
 ```{r}
 data_a_usar$edad <- na_if(data_a_usar$edad, 0)
@@ -61,7 +73,7 @@ data_a_usar$edad <- na_if(data_a_usar$edad, 1)
 data_a_usar$edad <- na_if(data_a_usar$edad, 10)
 table(data_a_usar$edad)
 ```
-
+___
 ##### **FILTRO Y RECODIFICACIÓN REGIÓN**
 ```{r}
 data_a_usar$region <- na_if(data_a_usar$region, 1)
@@ -83,7 +95,7 @@ data_a_usar <- mutate(data_a_usar, region = case_when(region==7~"VII",
                                                       region==16~"XVI"))
 table(data_a_usar$region)
 ```
-
+___
 ##### **FILTRO NACIONALIDAD**
 ```{r}
 data_a_usar$nacionalidad <- na_if(data_a_usar$nacionalidad, 88)
@@ -91,20 +103,21 @@ data_a_usar$nacionalidad <- na_if(data_a_usar$nacionalidad, 96)
 data_a_usar$nacionalidad <- na_if(data_a_usar$nacionalidad, 99)
 table(data_a_usar$nacionalidad)
 ```
-
+___
 ##### **FILTRO PERCEPCIÓN DELINCUENCIA**
 ```{r}
 data_a_usar$percepcion_delincuencia <- na_if(data_a_usar$percepcion_delincuencia, 88)
 data_a_usar$percepcion_delincuencia <- na_if(data_a_usar$percepcion_delincuencia, 99)
 table(data_a_usar$percepcion_delincuencia)
 ```
-
+___
 ##### **OBJETO ENCUESTA**
 ```{r}
 ENUSC <- data_a_usar %>% 
   as_survey_design(id=ID,
                    strata = )
 ```
+___
 
 ##### **ANÁLISIS PERCEPCIÓN DELINCUENCIA-EDAD**
 ```{r}
@@ -127,6 +140,7 @@ sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$edad,
 plot_grpfrq(data_a_usar$edad, data_a_usar$percepcion_delincuencia,
             type = "bar", title = "Gráfico de barras")
 ```
+___
 
 ##### **ANÁLISIS PERCEPCIÓN DELINCUENCIA-SEXO**
 ```{r}
@@ -154,6 +168,7 @@ plot_xtab(data_a_usar$percepcion_delincuencia, data_a_usar$sexo, margin = "row",
           title = "Gráfico de barras horizontales",
           show.summary = TRUE, coord.flip = TRUE)
 ```
+___
 
 ##### **ANÁLISIS PERCEPCIÓN DELINCUENCIA-NACIONALIDAD**
 ```{r}
@@ -175,7 +190,12 @@ sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$nacionalidad,
 ```{r}
 plot_grpfrq(data_a_usar$nacionalidad, data_a_usar$percepcion_delincuencia,
             type = "bar", title = "Gráfico de barras")
+plot_xtab(data_a_usar$percepcion_delincuencia, data_a_usar$nacionalidad, margin = "row", 
+          bar.pos = "stack",
+          title = "Gráfico de barras horizontales",
+          show.summary = TRUE, coord.flip = TRUE)
 ```
+___
 
 ##### **ANÁLISIS PERCPECIÓN DELINCUENCIA-REGIÓN**
 ```{r}
@@ -198,8 +218,9 @@ sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$region,
 plot_grpfrq(data_a_usar$region, data_a_usar$percepcion_delincuencia,
             type = "bar", title = "Gráfico de barras")
 
-```
 
+```
+___
 
 
 
