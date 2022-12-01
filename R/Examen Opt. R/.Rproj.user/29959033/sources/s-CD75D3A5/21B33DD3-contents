@@ -1,0 +1,29 @@
+---
+title: "Examen, OPT. R"
+author: "Claudio Bustos Hodges"
+date: '2022-12-05'
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+**DIRECTORIO DE TRABAJO**
+```{r}
+setwd("C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/R/Examen Opt. R")
+```
+
+**PAQUETES**
+```{r}
+pacman::p_load(sjmisc,
+               sjPlot,
+               tidyverse,
+               haven,
+               dplyr,
+               ggplot2,
+               srvyr,
+               tidyr,
+               survey,
+               plotrix)
+```
+

@@ -3,7 +3,7 @@
     "path": "C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/R/Examen Opt. R/Procesamiento datos.R",
     "project_path": "Procesamiento datos.R",
     "type": "r_source",
-    "hash": "1492960548",
+    "hash": "2617779885",
     "contents": "",
     "dirty": false,
     "created": 1669853559528.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "31,0",
-        "scrollLine": "20"
+        "cursorPosition": "16,23",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1669854011,
+    "lastKnownWriteTime": 1669865348,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1669854011775,
+    "last_content_update": 1669865348188,
     "read_only": false,
     "read_only_alternatives": []
 }
