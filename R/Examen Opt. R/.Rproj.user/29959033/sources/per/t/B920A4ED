@@ -1,27 +1,27 @@
 {
-    "id": "EC5678FC",
+    "id": "B920A4ED",
     "path": "C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/R/Examen Opt. R/Procesamiento datos.R",
     "project_path": "Procesamiento datos.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "4078134583",
     "contents": "",
     "dirty": false,
-    "created": 1669853559528.0,
+    "created": 1669954871941.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "249,0",
-        "scrollLine": "226"
+        "cursorPosition": "241,0",
+        "scrollLine": "224"
     },
     "folds": "",
-    "lastKnownWriteTime": 1669936270,
+    "lastKnownWriteTime": 1670034192,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1669936270998,
+    "last_content_update": 1670034192822,
     "read_only": false,
     "read_only_alternatives": []
 }

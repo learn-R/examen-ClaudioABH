@@ -4,7 +4,6 @@
 ####Claudio Bustos Hodges
 ##05/12/2022
 
-
 # DIRECTORIO DE TRABAJO ---------------------------------------------------
 setwd("C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/Input")
 
@@ -80,7 +79,6 @@ ENUSC <- data_a_usar %>%
   as_survey_design(id=ID,
                    strata = )
 
-
 # PERCEPCIÓN DELINCUENCIA -------------------------------------------------
 
 ## H0 "La percepción acerca de la delincuencia durante los últimos doce meses en el país, por parte de hombres,
@@ -104,14 +102,13 @@ DELINC_EDAD <- ENUSC %>%
   summarise(prop = survey_prop(vartype = "ci", level = .99, na.rm = T)) %>%
   mutate(per = prop*100) %>%
   ungroup()
-delincuencia_edad
 
 ##Tabla de contingencia delincuencia-edad
 sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$edad,
          show.col.prc = TRUE,
          show.summary = FALSE,
          encoding= "UTF-8",
-         tittle= "tabla de contingencia")
+         tittle= "tabla de contingencia delincuencia-edad")
 
 ##Gráfico delincuencia-edad
 plot_grpfrq(data_a_usar$edad, data_a_usar$percepcion_delincuencia,
@@ -129,7 +126,7 @@ sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$sexo,
          show.col.prc = TRUE,
          show.summary = FALSE,
          encoding= "UTF-8",
-         tittle= "tabla de contingencia")
+         tittle= "tabla de contingencia delincuencia-sexo")
 
 ##Gráficos percepción delincuencia-sexo
 plot_xtab(data_a_usar$percepcion_delincuencia, data_a_usar$sexo, margin = "row", 
@@ -149,7 +146,7 @@ sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$region,
          show.col.prc = TRUE,
          show.summary = FALSE,
          encoding= "UTF-8",
-         tittle= "tabla de contingencia")
+         tittle= "tabla de contingencia delincuencia-región")
 
 ##Gráfico percepción delincuencia-región
 plot_grpfrq(data_a_usar$region, data_a_usar$percepcion_delincuencia,
@@ -183,7 +180,7 @@ sjt.xtab(data_a_usar$sexo,data_a_usar$victimizacion,
          show.col.prc = TRUE,
          show.summary = FALSE,
          encoding= "UTF-8",
-         tittle= "tabla de contingencia")
+         tittle= "tabla de contingencia victimización-sexo")
 
 ##Gráfico sexo-victimización
 plot_xtab(data_a_usar$sexo, data_a_usar$victimizacion, margin = "row", 
@@ -203,7 +200,7 @@ sjt.xtab(data_a_usar$edad,data_a_usar$victimizacion,
          show.col.prc = TRUE,
          show.summary = FALSE,
          encoding= "UTF-8",
-         tittle= "tabla de contingencia")
+         tittle= "tabla de contingencia victimización-edad")
 
 ##Gráfico edad-victimización
 plot_xtab(data_a_usar$edad, data_a_usar$victimizacion, margin = "row", 
@@ -223,7 +220,7 @@ sjt.xtab(data_a_usar$region,data_a_usar$victimizacion,
          show.col.prc = TRUE,
          show.summary = FALSE,
          encoding= "UTF-8",
-         tittle= "tabla de contingencia")
+         tittle= "tabla de contingencia victimización-región")
 
 ##Gráfico región-victimización
 
@@ -242,6 +239,7 @@ VICT_EDAD_SEXO <- full_join(VICT_EDAD, VICT_SEXO, by = "victimizacion") %>%
   print()
 DATA_VICT_NUEVA <- full_join(VICT_EDAD_SEXO, VICT_REGION, by = "victimizacion") %>%
   print()
+
 
 # DATOS PROCESADOS --------------------------------------------------------
 save(DATA_DELINC_NUEVA, DATA_VICT_NUEVA, file = "C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/Output/data/datos_proc.rds")
