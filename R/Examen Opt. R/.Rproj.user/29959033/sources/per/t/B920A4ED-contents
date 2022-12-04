@@ -81,95 +81,64 @@ ENUSC <- data_a_usar %>%
 
 # PERCEPCIÓN DELINCUENCIA -------------------------------------------------
 
-## H0 "La percepción acerca de la delincuencia durante los últimos doce meses en el país, por parte de hombres,
-###### es igual que aquella manifestada por mujeres".
-## H1 "La percepción acerca de la delincuencia durante los últimos doce meses en el país, por parte de hombres,
-###### es diferente que aquella manifestada por mujeres".
-
-## H0 "La percepción acerca de la delincuencia durante los últimos doce meses en el país, por parte de personas con
-###### edades entre los 20 y 39 años, es igual que aquella manifestada por personas entres los 40 y 69 años".
-## H1 "La percepción acerca de la delincuencia durante los últimos doce meses en el país, por parte de personas con
-###### edades entre los 20 y 39 años, es diferente que aquella manifestada por personas entre los 40 y 69 años".
-
-## H0 "La percepción acerca de la delincuencia durante los últimos doce meses en el país, en regiones de la macrozona
-###### centro sur, es igual que aquella manifestada en las regiones de la macrozona sur".
-## H1 "La percepción acerca de la delincuencia durante los últimos doce meses en el país, en regiones de la macrozona
-###### centro sur, es diferente que aquella manifestada en las regiones de la macrozona sur". 
-
 # ANÁLISIS PERCEPCIÓN DELINCUENCIA-EDAD -----------------------------------
-DELINC_EDAD <- ENUSC %>% 
+ENUSC %>% 
   group_by(percepcion_delincuencia, edad) %>% 
   summarise(prop = survey_prop(vartype = "ci", level = .99, na.rm = T)) %>%
   mutate(per = prop*100) %>%
   ungroup()
 
 ##Tabla de contingencia delincuencia-edad
-sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$edad,
+sjt.xtab(data_a_usar$edad,data_a_usar$percepcion_delincuencia,
          show.col.prc = TRUE,
          show.summary = FALSE,
          encoding= "UTF-8",
          tittle= "tabla de contingencia delincuencia-edad")
 
 ##Gráfico delincuencia-edad
-plot_grpfrq(data_a_usar$edad, data_a_usar$percepcion_delincuencia,
+plot_xtab(data_a_usar$edad, data_a_usar$percepcion_delincuencia,
             type = "bar", title = "Gráfico delincuencia-edad")
 
 # ANÁLISIS PERCEPCIÓN DELINCUENCIA-SEXO -----------------------------------
-DELINC_SEXO <- ENUSC %>% 
+ENUSC %>% 
   group_by(percepcion_delincuencia, sexo) %>% 
   summarise(prop = survey_prop(vartype = "ci", level = .99, na.rm = T)) %>%
   mutate(per = prop*100) %>%
   ungroup() 
 
 ##Tabla de contingencia percepción delincuencia-sexo
-sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$sexo,
+sjt.xtab(data_a_usar$sexo, data_a_usar$percepcion_delincuencia,
          show.col.prc = TRUE,
          show.summary = FALSE,
          encoding= "UTF-8",
          tittle= "tabla de contingencia delincuencia-sexo")
 
 ##Gráficos percepción delincuencia-sexo
-plot_xtab(data_a_usar$percepcion_delincuencia, data_a_usar$sexo, margin = "row", 
-          bar.pos = "stack",
-          title = "Gráfico delincuencia-sexo",
-          show.summary = TRUE, coord.flip = TRUE)
+plot_xtab(data_a_usar$sexo, data_a_usar$percepcion_delincuencia, 
+          type = "bar", title = "Gráfico delincuencia-sexo")
 
 # ANÁLISIS PERCEPCIÓN DELINCUENCIA-REGIÓN --------------------------------------------
-DELINC_REGION <- ENUSC %>% 
+ENUSC %>% 
   group_by(percepcion_delincuencia, region) %>% 
   summarise(prop = survey_prop(vartype = "ci", level = .99, na.rm = T)) %>%
   mutate(per = prop*100) %>%
   ungroup()
 
 ##Tabla de contingencia percepción delincuencia-región
-sjt.xtab(data_a_usar$percepcion_delincuencia,data_a_usar$region,
+sjt.xtab(data_a_usar$region, data_a_usar$percepcion_delincuencia,
          show.col.prc = TRUE,
          show.summary = FALSE,
          encoding= "UTF-8",
          tittle= "tabla de contingencia delincuencia-región")
 
 ##Gráfico percepción delincuencia-región
-plot_grpfrq(data_a_usar$region, data_a_usar$percepcion_delincuencia,
+plot_xtab(data_a_usar$region, data_a_usar$percepcion_delincuencia,
             type = "bar", title = "Gráfico delincuencia-región")
 
-
 # VICTMIZACIÓN ------------------------------------------------------------
-## H0 "El creer ser víctima de un delito en los próximos doce meses, por parte de mujeres, es menor o igual que 
-##### en hombres".
-## H1 "El creer ser víctima de un delito en los próximos doce meses, por parte de mujeres, es mayor que en hombres".
-
-## H0 "El creer ser víctima de un delito en los próximos doce meses, por parte de personas con edades entre los 20 y
-##### 39 años, es mayor o igual que aquel manifestado por personas con edades entre los 40 y 69 años". 
-## H1 "El creer ser víctima de un delito en los próximos doce meses, por parte de personas con edades entre los 20 y
-##### 39 años, es menor que aquel manifestado por personas con edades entre los 40 y 69 años". 
-
-## H0 "El creer ser víctima de un delito en los próximos doce meses, en regiones de la macrozona centro sur, es 
-##### menor o igual que aquel manifestado en las regiones de la macrozona sur". 
-## H1 "El creer ser víctima de un delito en los próximos doce meses, en regiones de la macrozona centro sur, es 
-##### mayor que aquel manifestado en las regiones de la macrozona sur". 
-
+ 
 # ANÁLISIS SEXO-VICTIMIZACIÓN ---------------------------------------------
-VICT_SEXO <- ENUSC %>% 
+ENUSC %>% 
   group_by(victimizacion, sexo) %>% 
   summarise(prop = survey_prop(vartype = "ci", level = .99, na.rm = T)) %>%
   mutate(per = prop*100) %>%
@@ -183,13 +152,11 @@ sjt.xtab(data_a_usar$sexo,data_a_usar$victimizacion,
          tittle= "tabla de contingencia victimización-sexo")
 
 ##Gráfico sexo-victimización
-plot_xtab(data_a_usar$sexo, data_a_usar$victimizacion, margin = "row", 
-          bar.pos = "stack",
-          title = "Gráfico sexo-victimización",
-          show.summary = TRUE, coord.flip = TRUE)
+plot_xtab(data_a_usar$sexo, data_a_usar$victimizacion, 
+          type = "bar", title = "Gráfico victimización-sexo")
 
 # ANÁLISIS EDAD-VICTIMIZACIÓN --------------------------------------------
-VICT_EDAD <- ENUSC %>% 
+ENUSC %>% 
   group_by(victimizacion, edad) %>% 
   summarise(prop = survey_prop(vartype = "ci", level = .99, na.rm = T)) %>%
   mutate(per = prop*100) %>%
@@ -203,13 +170,11 @@ sjt.xtab(data_a_usar$edad,data_a_usar$victimizacion,
          tittle= "tabla de contingencia victimización-edad")
 
 ##Gráfico edad-victimización
-plot_xtab(data_a_usar$edad, data_a_usar$victimizacion, margin = "row", 
-          bar.pos = "stack",
-          title = "Gráfico edad-victimización",
-          show.summary = TRUE, coord.flip = TRUE)
+plot_xtab(data_a_usar$edad, data_a_usar$victimizacion, 
+          type = "bar", title = "Gráfico victimización-edad")
 
 # ANÁLISIS REGIÓN-VICTIMIZACIÓN -------------------------------------------
-VICT_REGION <- ENUSC %>% 
+ENUSC %>% 
   group_by(victimizacion, region) %>% 
   summarise(prop = survey_prop(vartype = "ci", level = .99, na.rm = T)) %>%
   mutate(per = prop*100) %>%
@@ -223,26 +188,11 @@ sjt.xtab(data_a_usar$region,data_a_usar$victimizacion,
          tittle= "tabla de contingencia victimización-región")
 
 ##Gráfico región-victimización
-
-plot_xtab(data_a_usar$region, data_a_usar$victimizacion, margin = "row", 
-          bar.pos = "stack",
-          title = "Gráfico región-victimización",
-          show.summary = TRUE, coord.flip = TRUE)
-
-# UNIÓN VARIABLES ---------------------------------------------------------
-DELINC_EDAD_SEXO <- full_join(DELINC_EDAD, DELINC_SEXO, by = "percepcion_delincuencia") %>%
-  print()
-DATA_DELINC_NUEVA <- full_join(DELINC_EDAD_SEXO, DELINC_REGION, by = "percepcion_delincuencia") %>%
-  print()
-
-VICT_EDAD_SEXO <- full_join(VICT_EDAD, VICT_SEXO, by = "victimizacion") %>%
-  print()
-DATA_VICT_NUEVA <- full_join(VICT_EDAD_SEXO, VICT_REGION, by = "victimizacion") %>%
-  print()
-
+plot_xtab(data_a_usar$region, data_a_usar$victimizacion, 
+          type = "bar", title = "Gráfico victimización-región")
 
 # DATOS PROCESADOS --------------------------------------------------------
-save(DATA_DELINC_NUEVA, DATA_VICT_NUEVA, file = "C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/Output/data/datos_proc.rds")
-save(DATA_DELINC_NUEVA, DATA_VICT_NUEVA, file = "C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/Output/data/datos_proc.RData")
+save(ENUSC, data_a_usar, file = "C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/Output/data/datos_proc.rds")
+save(ENUSC, data_a_usar, file = "C:/Users/claudio/Desktop/CLASES OPT. R/02-clase/R/examen-ClaudioABH/Output/data/datos_proc.RData")
 
 
