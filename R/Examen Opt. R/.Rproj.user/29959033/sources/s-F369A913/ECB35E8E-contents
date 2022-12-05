@@ -11,21 +11,23 @@ editor_options:
 
 ### **VICTIMIZACIÓN Y PERCEPCIÓN DE LA DELINCUENCIA EN LA MACROZONA CENTRO SUR Y MACROZONA SUR DE CHILE**
 
-___
+------------------------------------------------------------------------
+
 ##### **Abstrac**
 
 La victimización y percepción de la delincuencia en nuestro país resulta
 una problemática que, históricamente, ha estado en la palestra en el
 acontecer nacional, constituyendo así una temática que no resulta ajena
-a ninguna persona que habita el presente territorio. Ante esto, el
+a ninguna persona que habita el territorio. Ante esto, el
 presente trabajo busca dar cuenta de la victimización -específicamente
 considerar ser víctima de algún delito los próximos doce meses- y
 percepción que tienen mujeres y hombres de las macrozonas centro sur, y
-sur, con tramos etarios que van desde entre los 20 a 69 años
+sur, con tramos etarios que van desde entre los 20 a 39 años, y 40 a 69 años
 respectivamente, acerca de la delincuencia imperante en aquellas zonas
 geográficas del país.
 
-___
+------------------------------------------------------------------------
+
 ##### **Introducción**
 
 La delincuencia constituye un fenómeno social inherente a cualquier
@@ -36,7 +38,7 @@ manera persistente y casi natural, apelan por la búsqueda de aquella
 seguridad que remite a una "expresión de una necesidad vital del ser
 humano" (Burgos y Tudela, 2002:475). Es frente a situaciones delictuales
 -siendo víctimas, testigos, así como conocedores del fenómeno como tal-
-es que manifiesta y se forma, en la persona misma, diversas
+es que se manifiesta y se forma, en la persona misma, diversas
 percepciones, opiniones, y modos de enfrentarse a este. Ante esto es que
 surge, tal como lo señala la propia teoría de la victimización, "mayores
 niveles de temor a la delincuencia" (Paydar y Kamani, 2015:180),
@@ -50,7 +52,8 @@ delincuencia en nuestro país, varía y se ve afectada por diversos
 factores, siendo los más importantes y fundamentales, aquellos que
 remiten al sexo, edad y zona geográfica que se habite.
 
-___
+------------------------------------------------------------------------
+
 ##### **Análisis**
 
 El análisis de la base de datos de la 18° Encuesta Nacional Urbana de
@@ -61,11 +64,12 @@ sexo (rph_sexo) y región (enc_region). Se incurrió en el filtro y
 recodificación de estas, buscando trabajar con población -masculina y
 femenina- de las regiones del Maule, Ñuble, BioBío y Araucanía
 (Macrozona Centro Sur); y de las regiones de Los Ríos, Los Lagos, Aysén
-y Magallanes (Macrozona Sur). De igual forma, las edades de aquella
-población fueron recodificadas en dos grupos: 20 a 39 años, y 40 a 69
-años. Dentro del proceso de recodificación, las variables fueron
-renombradas, con la intención de facilitar el posterior análisis de
-estas.
+y Magallanes (Macrozona Sur). Cabe mencionar, que la recodificación en
+macrozonas fue en base a la distribución que se señala en la página
+<https://www.prochile.gob.cl>.De igual forma, las edades de aquella población fueron recodificadas en
+dos grupos: 20 a 39 años, y 40 a 69 años. Dentro del proceso de
+recodificación, las variables fueron renombradas, con la intención de
+facilitar el posterior análisis de estas.
 
 Así mismo, se trabajó en la creación de un objeto encuesta (denominado
 ENUSC), con la finalidad de realizar cálculos para muestras complejas,
@@ -74,12 +78,12 @@ señaladas. El análisis de las variables y las relaciones existentes
 entre ellas, fue en base a un nivel de confianza del 99% (0.99) y con un
 1% de nivel de significancia, esto dada la pretensión de que las
 estimaciones hechas incluyeran de mejor manera el parámetro poblacional,
-y asumiendo ,de igual forma, que el nivel de confianza (99%) escogido
+y asumiendo ,de igual forma, que el nivel de confianza escogido (99%)
 para la realización del análisis implica la cierta pérdida de precisión
 en los cálculos realizados. Tambíen, el análisis que aquí se presenta
 buscó establecer las relaciones que se dan entre las variables
 sociodemográficas escogidas (sexo, edad, región) con aquellas variables
-de percepción de la delincuencia (P1_1\_1) y de victimización (P4_1\_1).
+de percepción de la delincuencia (P1_1\_1) y de victimización (P4_1_1).
 Estos análisis entre variables se encuentra representado en los
 siguientes gráficos y tablas de contingencia:
 
@@ -112,32 +116,14 @@ sexo-victimización](C:/Users/claudio/Desktop/CLASES%20OPT.%20R/02-clase/R/exame
 ![Tabla contingencia
 victimización-sexo](C:/Users/claudio/Desktop/CLASES%20OPT.%20R/02-clase/R/examen-ClaudioABH/Output/TABLAS%20CONTINGENCIA/Tabla%20contingencia%20victimizaci%C3%B3n-sexo.png)
 
-___
+------------------------------------------------------------------------
+
 ##### **Conclusión**
 
-Es en base a los gráficos y tablas de contingencia que resulta plausible
-concluir que, en cuanto a la percepción de delincuencia en las
-macrozonas centro sur, y sur, es la población de entre 40 y 69 años
-aquella que más sostiene un aumento de aquella problemática, con un
-69,3%; frente a la población de entre 20 y 39 años, con un 30,7%. Esta
-percepción, diferenciada por el sexo de la población de las mencionadas
-macrozonas, encuentra en las mujeres un aumento de la delincuencia, con
-un 57%; frente a la de los hombres, que alcanzan tan solo un 43%. En
-cuanto a la diferenciación de macrozonas, es la centro sur aquella que,
-en promedio, muestra un mayor porcentaje de percepción de un aumento de
-la delincuencia, con un 13,7%; versus la macrozona sur que, en promedio,
-sólo alcanza un 11,8%. En cuanto a la victimización, es la población de
-entre 40 a 69 años, con un 66%, aquella que más manifiesta poder ser
-víctima de un delito en los próximos doce meses; frente al grupo de
-entre 20 y 39 años, con un 34%. Es la población femenina, con un 54,5%,
-aquella que manifiesta ser potencialmente víctima de un delito, frente a
-los hombres que alcanzan, tan sólo, un 45,5%. Por último, es la
-población de la macrozona centro sur, con un promedio de 16,2%, aquella
-que manifiesta una mayor creencia de poder ser víctima de un delito
-dentro de los próximos doce meses, esto ante la población de la
-macrozona sur, la cual, en promedio, alcanza un 11,4%.
+En cuanto a la percepción de delincuencia en las macrozonas centro sur, y sur, es la población de entre 40 y 69 años aquella que sostiene un aumento de aquella problemática, con un 69,3%; frente a la población de entre 20 y 39 años, con un 30,7%. Esta percepción, diferenciada por el sexo de la población de las mencionadas macrozonas, encuentra en las mujeres un aumento de la delincuencia con un 57%; frente a la de los hombres, que alcanzan tan solo un 43%. En cuanto a la diferenciación de macrozonas, es la centro sur aquella que, en promedio, muestra un mayor porcentaje de percepción de un aumento de la delincuencia, con un 13,7%; versus la macrozona sur que, en promedio, sólo alcanza un 11,8%. En cuanto a la victimización, es la población de entre 40 a 69 años, con un 66%, aquella que más manifiesta poder ser víctima de un delito en los próximos doce meses; frente al grupo de entre 20 y 39 años, con un 34%. Es la población femenina, con un 54,5%, aquella que manifiesta ser potencialmente víctima de un delito, frente a los hombres que alcanzan, tan sólo, un 45,5%. Por último, es la población de la macrozona centro sur, con un promedio de 16,2%, aquella que manifiesta una mayor creencia de poder ser víctima de un delito dentro de los próximos doce meses, esto ante la población de la macrozona sur, la cual, en promedio, alcanza un 11,4%.
 
-___
+------------------------------------------------------------------------
+
 ##### **Bibliografía**
 
 -   BURGOS, J., TUDELA, P. (2002). Seguridad ciudadana en Chile: Los
@@ -145,7 +131,6 @@ ___
     pública. En: Seguridad ciudadana: espejismo o realidad. FLACSO y
     OPS/OMS. Quito, Ecuador.
 
--   Pydar, M.,Asal, K. "El temor a la delincuencia y
-    la percepción de inseguridad en el entorno urbano." Argos, vol. 32,
-    no. 63, 2015, pp. 179-195.
-
+-   Pydar, M.,Asal, K. "El temor a la delincuencia y la percepción de
+    inseguridad en el entorno urbano." Argos, vol. 32, no. 63, 2015, pp.
+    179-195.

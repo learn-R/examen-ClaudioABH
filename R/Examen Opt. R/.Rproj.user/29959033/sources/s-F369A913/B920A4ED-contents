@@ -44,6 +44,7 @@ table(data_a_usar$edad)
 data_a_usar <- mutate(data_a_usar, edad = case_when(edad>=2 & edad==3 & edad<=4~"Entre 20 y 39 años",
                                                     edad>=5 & edad==6 & edad<=7~"Entre 40 y 69 años"))
 table(data_a_usar$edad)
+
 # FILTRO Y RECODIFICACIÓN REGIÓN ---------------------------------------------------
 data_a_usar$region <- na_if(data_a_usar$region, 1)
 data_a_usar$region <- na_if(data_a_usar$region, 2)
